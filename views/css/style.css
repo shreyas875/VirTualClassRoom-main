@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    color: black;
+}
+
+.maincontainer {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(160, 160, 160);
+}
+
+.leftsection {
+    font-size: medium;
+}
+
+#name {
+    font-size: large;
+    font-weight: 600;
+    margin-top: 3.5rem;
+    margin-left: 0.5rem;
+}
+
+#Logo {
+    margin-left: 3rem;
+    margin-top: 2.5rem;
+}
+
+.leftsection ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 6rem;
+    margin-block: 8.5rem;
+}
+
+.leftsection li {
+    font-weight: 400;
+    padding-block: 2rem;
+}
+
+.uppersection {
+    display: flex;
+}
+
+.leftsection a:hover {
+    color: black;
+    font-size: 1rem;
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition-delay: 1ms;
+}
+
+.leftsection a:active {
+    color: rgba(0, 104, 255, 255);
+}
+
+.middlesection {
+    border: 0.25px solid rgba(243, 246, 255, 255);
+    border-radius: 1rem;
+    margin-left: 2rem;
+    background-color: rgba(243, 246, 255, 255);
+    margin-top: 0.5rem;
+}
+
+.middlebanner {
+    padding: 1.75rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    font-size: x-large;
+}
+
+#showPopupBtn {
+    color: azure;
+    font-weight: 300;
+    background-color: rgba(0, 104, 255, 255);
+    border: 0.25rem solid rgba(0, 104, 255, 255);
+    padding-inline:0.75rem;
+    border-radius: 50%;
+    padding-block: 0.40rem;
+    margin-top: 1rem;
+    margin-left:12rem;
+}
+
+#date {
+    font-size: medium;
+    color: rgb(16, 16, 232);
+}
+
+.mainsection {
+    color: rgb(160, 160, 160);
+    font-weight: 400;
+    padding-inline: 1.75rem;
+    padding-right: 0.25rem;
+}
+
+#buttons {
+    margin-left: 0;
+}
+
+.section1 {
+    display: flex;
+    margin-right: 1.5rem;
+    padding-block: 1.75rem;
+    padding-left:1.8rem;
+    color: black;
+    border: 0.05px solid black;
+    border-radius: 15px;
+    margin-top: 18px;
+    font-size: 20px;
+    background-image: url(../Img/data-structures-cover.jpeg);
+    background-position: center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    /* margin-right: 0.25rem; */
+}
+.section1 .programmcode {
+    margin-left: 10rem;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+}
+#profname {
+    font-size: 15px;
+}
+
+#timing {
+    font-size: 12px;
+}
+
+.flex {
+    display: flex;
+}
+
+.rightmain {
+    display: flex;
+}
+
+
+.DataStructure a {
+    color: black;
+    font-weight: 500;
+}
+
+#enterbutton {
+    font-size: small;
+    /* margin-left: 40px; */
+    padding-top: 30px;
+}
+
+.section2 {
+    display: flex;
+    margin-right: 1.8rem;
+    padding-block: 1.75rem;
+    padding-left:1.8rem;
+    color: white;
+    border: 0.05px solid white;
+    border-radius: 15px;
+    margin-top: 18px;
+    font-size: 20px;
+    background-image: url(../Img/computers-windows-7-wallpaper-preview.jpg);
+    background-position: top right;
+    background-size: 500px;
+    /* margin-right: 20px; */
+}
+
+/* .leftsection span {
+    padding-inline-start: 15px;
+} */
+
+.section2 .programmcode {
+    padding-right: 2rem;
+    color: white;
+    font-weight: 500;
+}
+
+.CG a {
+    color: white;
+    font-weight: 500;
+}
+
+.section3 {
+    display: flex;
+    margin-right: 1.5rem;
+    padding-block: 1.75rem;
+    padding-left:1.8rem;
+    color: whitesmoke;
+    border: 0.05px solid w;
+    border-radius: 15px;
+    margin-top: 18px;
+    font-size: 20px;
+    background-image: url(../Img/1690606326737.gif);
+    background-position: center;
+    background-size: 350px;
+    /* margin-right: 20px; */
+}
+
+.DSGT a {
+    color: white;
+}
+
+.sectionss {
+    max-width: 28rem; /* Set your desired max width */
+    margin: 0 auto; /* Center the container */
+    overflow: hidden; /* Hide content outside the container */
+}
+
+.scroll-container {
+    max-height: 29rem;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.section2 .programmcode {
+    margin-left: 10rem;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+}
+
+.section3 .programmcode {
+    margin-left: 5rem;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+}
+
+.section4 {
+    display: flex;
+    margin-right: 1.4rem;
+    padding-block: 1.25rem;
+    padding-left:1.8rem;
+    color: black;
+    border: 0.05px solid black;
+    border-radius: 15px;
+    margin-top: 18px;
+    font-size: 20px;
+    background-image: url(../Img/istockphoto-495300389-2048x2048.jpg);
+    background-position: top right;
+    background-size: 400px;
+    /* margin-right: 20px; */
+}
+
+.EM a {
+    color: black;
+    font-weight: 500;
+}
+
+.section4 .programmcode {
+    color: black;
+    margin-left:2rem;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+}
+
+.section5 .programmcode {
+    margin-left: 8rem;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+}
+
+.DLCOA a {
+    color: black;
+    font-weight: 500;
+}
+
+.section5 {
+    display: flex;
+    background-color: rgba(0, 104, 255, 255);
+    color: black;
+    margin-right: 1.5rem;
+    padding-block: 1.75rem;
+    padding-left:1.8rem;
+    border: 0.05px solid black;
+    border-radius: 15px;
+    margin-top: 18px;
+    font-size: 20px;
+    background-image: url(../Img/futuristic-clean-technology-concept-white-paper-gear-wheel-technology-circuit-board-background_51543.jpg);
+    background-position: center right;
+    background-size: 450px;
+    /* margin-bottom: 10px;
+    margin-right: 20px; */
+}
+
+.rightbanner {
+    display: flex;
+    justify-content: space-around;
+}
+
+.login a {
+    color: black;
+}
+
+.login {
+    margin-left: 12rem;
+    margin-top: 1.75rem;
+    font-weight: 500;
+}
+
+.rightsec {
+    margin-top: 1.75rem;
+}
+
+.imgavatar {
+    margin-top: 0.5rem;
+    margin-left: 0.75rem;
+}
+
+.notification-container {
+    position: relative;
+}
+
+.notification-button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.notification-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-button {
+    font-weight: 500;
+}
+
+.notification-container {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+#type {
+    color: rgba(0, 104, 255, 255);
+    font-size: small;
+}
+
+.rightsecelemnts span {
+    margin-left: 0;
+}
+
+.tyty {
+    padding-block:0;
+}
+
+.tytty {
+    padding-inline: 2rem;
+    padding-block-start: 1rem;
+    color: rgb(160, 160, 160);
+    font-weight: 500;
+}
+
+.rightsectmain a {
+    color: black;
+}
+
+.rightsectmain span {
+    padding-inline-start: 0;
+}
+
+.rightsecelemnts {
+    margin-top: 0;
+    display: flex;
+}
+
+.todolistimg {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.todolist img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todolist:hover {
+    transform: translate(10%, 10%) scale(1);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 4px;
+    color: black;
+    background-color: #c5fff3;
+}
+
+#todolistimg {
+    margin-top: 10px;
+}
+
+.todolist {
+    display: flex;
+}
+
+.todolist:hover span {
+    color: rgb(243, 89, 125);
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.TimeTable {
+    display: flex;
+}
+
+.TimeTable:hover span {
+    color: rgb(243, 89, 125);
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.Support {
+    display: flex;
+}
+
+.Support:hover span {
+    color: rgb(243, 89, 125);
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.Achivements {
+    display: flex;
+}
+
+.Achivements:hover span {
+    color: rgb(243, 89, 125);
+    transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.TimeTableimg {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.TimeTable img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.TimeTable:hover {
+    transform: translate(10%, 10%) scale(1);
+}
+
+.Supportimg {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+ .Support img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.Support:hover {
+    transform: translate(10%, 10%) scale(1);
+}
+
+.Achivementsimg {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.Achivements img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Achivements:hover {
+    transform: translate(10%, 10%) scale(1);
+}
+
+.rightsecelemnts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-inline: 1rem;
+}
+
+.footer {
+    padding-block: 0.37rem;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+}
+
+#showPopupBtn:hover {
+    cursor: pointer;
+}
+
+.toolssssss {
+    margin-top: 700px;
+}

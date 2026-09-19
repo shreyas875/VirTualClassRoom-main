@@ -1,0 +1,265 @@
+body {
+  overflow-x: hidden;
+  background-color: rgb(36, 36, 36);
+}
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+#displayList {
+  list-style: none;
+}
+/* Style for the input box */
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: rgb(36, 36, 36);
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Change the direction to column */
+}
+
+.text-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add margin at the bottom */
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.display-list {
+  list-style-type: none; /* Remove bullets from the list */
+  margin: 0;
+  padding: 0;
+}
+
+.display-list-item {
+  margin-bottom: 5px; /* Add margin at the bottom of each list item */
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#chat {
+  width: 300px;
+  margin: 0;
+}
+.chat::-webkit-scrollbar {
+  width: 0;
+}
+#chat-messages {
+  height: 444px;
+  border: 1px solid black;
+  overflow-y: scroll;
+}
+
+#message-input {
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  /* color:black; */
+}
+.message-input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid black; /* Add a border for input field */
+  border-radius: 5px; /* Rounded corners for input field */
+  /* color: #fff; */
+}
+
+#send-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Add some spacing between input and button */
+}
+
+#send-button:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+.message-input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px; /* Add some spacing between input and button */
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.message-input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.message-input {
+  display: flex;
+  flex-grow: 1;
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.message-input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.message-input {
+  display: flex;
+  flex-grow: 1;
+  color: #fff;
+}
+#chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+#webcam {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  height: 215px;
+  /* border: 2px solid floralwhite; */
+  cursor: grabbing;
+  padding: 0;
+  margin-left: -50px;
+  /* border-radius: 70px; */
+  /* margin-right: 2px; */
+  /* Change cursor to indicate draggable */
+}
+
+#chat {
+  margin-top: 198px;
+}
+
+.message-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  /* Increase the top margin for more space */
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  /* Increase padding for more space inside the input */
+}
+
+#send-button {
+  padding: 10px 20px;
+  /* Increase padding for more space inside the button */
+}
+.annotation-area {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  min-height: 400px;
+}
+.annotation {
+  position: absolute;
+  background-color: yellow;
+  padding: 5px;
+}
+canvas {
+  border: 1px solid white;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cannvas {
+  background-color: black;
+}
+#whiteboard {
+  border-radius: 10px;
+}
