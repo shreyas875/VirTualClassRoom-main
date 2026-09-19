@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Lecture Web App</title>
+  <link rel="stylesheet" href="../css/Mainclass.css" />
+</head>
+
+<body>
+  <div class="maincontainer">
+    <div class="rightsection">
+      <div class="chatsection">
+        <!-- <h1 class="CHAT">ChatSection</h1> -->
+
+        <div id="chat">
+          <div id="chat-messages"></div>
+          <input type="text" id="message-input" placeholder="Type your message..." />
+        </div>
+        <button id="send-button">Send</button>
+        <div id="displayArea">        </div>
+        <video id="webcam" autoplay playsinline></video>
+      </div>
+    </div>
+    <div class="cannavs">
+      <button id="muteButton">Mute</button>
+    <button id="unmuteButton">Unmute</button>
+    <input type="file" id="fileInput" />
+    <audio id="audioElement" autoplay></audio>
+    <div id="pdfDisplay" height = "700px" width="1090px"></div>
+      <canvas id="whiteboard" width="1090" height="700"></canvas>
+      <button id="eraseButton">Erase</button>
+    </div>
+    
+    </div>
+    <script>
+      // Function to start capturing video from the user's webcam
+      async function startWebcam() {
+        try {
+          // Access the user's webcam
+          const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+          // Assign the webcam stream to the video element
+          const videoElement = document.getElementById('webcam');
+          videoElement.srcObject = stream;
+        } catch (error) {
+          console.error('Error accessing webcam:', error);
+        }
+      }
+      // Call the function to start capturing video when the page loads
+      window.onload = startWebcam;
+    </script>
+    <script>
+      // JavaScript code for adding annotations with mouse clicks
+      const annotationArea = document.getElementById("annotationArea");
+
+      annotationArea.addEventListener("click", function(event) {
+          const mouseX = event.clientX;
+          const mouseY = event.clientY;
+
+          const annotationElement = document.createElement("div");
+          annotationElement.className = "annotation";
+          annotationElement.style.left = mouseX + "px";
+          annotationElement.style.top = mouseY + "px";
+          annotationElement.textContent = "Teacher's Annotation";
+
+          annotationArea.appendChild(annotationElement);
+      });
+  </script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById("whiteboard");
+    const context = canvas.getContext("2d");
+
+    // Define initial drawing settings
+    context.strokeStyle = "white";
+    context.lineWidth = 2;
+    context.lineCap = "round";
+
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        [lastX, lastY] = [e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top];
+    });
+
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseup", () => isDrawing = false);
+    canvas.addEventListener("mouseout", () => isDrawing = false);
+
+    function draw(e) {
+        if (!isDrawing) return;
+
+        const x = e.clientX - canvas.getBoundingClientRect().left;
+        const y = e.clientY - canvas.getBoundingClientRect().top;
+
+        context.beginPath();
+        context.moveTo(lastX, lastY);
+        context.lineTo(x, y);
+        context.stroke();
+
+        // Send the drawing data to the server to broadcast to students
+        // Example: You can send the (x, y) coordinates and drawing commands to the server.
+        // You need to implement the server-side logic for broadcasting.
+
+        [lastX, lastY] = [x, y];
+    }
+});
+
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById("whiteboard");
+    const context = canvas.getContext("2d");
+    const eraseButton = document.getElementById("eraseButton");
+
+    // Set initial drawing settings
+    context.strokeStyle = "white"; // Default drawing color
+    context.lineWidth = 2;
+    context.lineCap = "round";
+
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        [lastX, lastY] = [e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top];
+    });
+
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseup", () => isDrawing = false);
+    canvas.addEventListener("mouseout", () => isDrawing = false);
+
+    eraseButton.addEventListener("click", () => {
+        // Clear the entire canvas when eraser mode is activated
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    function draw(e) {
+        if (!isDrawing) return;
+
+        const x = e.clientX - canvas.getBoundingClientRect().left;
+        const y = e.clientY - canvas.getBoundingClientRect().top;
+
+        context.beginPath();
+        context.moveTo(lastX, lastY);
+        context.lineTo(x, y);
+        context.stroke();
+
+        [lastX, lastY] = [x, y];
+    }
+});
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const muteButton = document.getElementById("muteButton");
+    const unmuteButton = document.getElementById("unmuteButton");
+    const audioElement = document.getElementById("audioElement");
+
+    let audioStream;
+
+    // Function to start audio input
+    async function startAudioInput() {
+        try {
+            audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            audioElement.srcObject = audioStream;
+        } catch (error) {
+            console.error("Error accessing the microphone:", error);
+        }
+    }
+
+    // Function to stop audio input
+    function stopAudioInput() {
+            const tracks = audioStream.getTracks();
+            tracks.forEach(track => track.stop());
+            audioStream = null;
+            audioElement.srcObject = null;
+    }
+
+    // Mute button click handler
+    muteButton.addEventListener("click", () => {
+        stopAudioInput();
+        muteButton.disabled = true;
+        unmuteButton.disabled = false;
+    });
+
+    // Unmute button click handler
+    unmuteButton.addEventListener("click", () => {
+        startAudioInput();
+        unmuteButton.disabled = true;
+        muteButton.disabled = false;
+    });
+
+    // Start audio input by default
+    startAudioInput();
+    unmuteButton.disabled = true;
+});
+
+</script>
+<script>
+       // Get the file input element
+      const fileInput = document.getElementById("fileInput");
+
+      // Get the canvas and PDF display elements
+      const canvas = document.getElementById("whiteboard");
+      const pdfDisplay = document.getElementById("pdfDisplay");
+
+      // Listen for the user to select a file
+      fileInput.addEventListener("change", function () {
+        // Get the selected file
+        const file = fileInput.files[0];
+
+        // Check if a PDF file is selected
+        if (file.type === "application/pdf") {
+          // Display the PDF and hide the canvas
+          pdfDisplay.style.display = "block";
+          canvas.style.display = "none";
+          pdfDisplay.innerHTML = `<iframe src="${URL.createObjectURL(
+            file
+          )}" width="1180px" height="700px"></iframe>`;
+        } else {
+          // Display an error or handle other file types
+          alert("Please select a PDF file.");
+        }
+      });
+    </script>
+    <script src="scriptt.js"></script>
+  </div>
+</body>
+
+</html>
